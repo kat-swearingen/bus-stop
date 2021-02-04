@@ -1,0 +1,800 @@
+#include <iostream>
+#include<ctime>
+#include<cstdlib>
+#include<string>
+using namespace std;
+void wisdome();//function declaration
+string inventory[5];
+int fire = 0;
+bool key = false;
+bool cut = false;
+char input;
+
+char crypt();
+void Church();
+
+char room = '1';
+
+bool knome = false;
+bool isDead = false;
+bool greenhouse = true;
+bool hasWon = false;
+bool teddy = false;
+bool shovel = false;
+bool drawing = false;
+bool redkey = false;
+bool bandaid = false;
+bool all = false;
+//get these bools under here to
+bool church = true;
+bool redpin = false;
+bool chalk = false;
+bool candel = false;
+bool blood = false;
+bool cross = false;
+bool spiders = false;
+int main() {
+    string input = "west";
+
+
+    srand(time(NULL));
+    //intro gose here
+
+    while (input.compare("quit") != 0 && isDead == false && hasWon == false) {//main game loop
+
+        
+
+        switch (room) {
+
+        case '1':
+            //discription
+            cout << "I opened my eyes and sat up. I was still at the bus stop. I must have fallen asleep on the bench. I looked around and the rain that had persisted throughout the day was still going strong covering the trees around me in a thick fog. There was no one else at the bus stop. “How odd” i thought “normally it's swarming with people, the 5 O'clock Bus must have already come and gone. I sat there for a few moments listening to the gentle pitter patter of the rain falling on the asphalt. Until i heard it. An ear piercing scream cut through the rain, help me called the voice. I stood up and looked around but there was no one in sight. Over her please help me. I turned around and could barely make out 2 figures in the fog one looked to be struggling against the other one's grasp. I grabbed my yellow rain poncho and started running towards the shapes in the fog. Hey let go of them I shouted. The taller of the figures the one gripping the other stated to run dragging the second figure clumsily behind them. Help help me please. Dont worry im coming i cried out. We ran down a dirt path, slick with mud from the rain. Until we reached a tall iron clad fence with a grand looking gate. I couldn't remember if i had seen this place before, it didn't look familiar but there was no time to think about it. The figures ran through the gate into the yard beyond. I followed suit and realized I was in a graveyard. Suddenly I heard a loud clang behind me. I spun around to see that the gates slammed shut. I looked back and saw that the fog was clearing to reveal a massive graveyard nothing but tombstones for as far as the eye could see. But there was no trace of the figures. Where could they have gone, what's happening? I was so confused. The rain pounded harder around me drowning out my footsteps. Then I heard something new, a low gravelly voice right in my ear. “Welcome to the grave yard alex she is waiting for you”. Who's there I shouted I spun in a circle but there was no one there. " << endl;
+            //dercetions
+            cout << "type any key to continue" << endl;
+            getline(cin, input);
+            room = '2';
+            break;
+
+        case '2':
+            if (knome == true)
+                wisdome();
+            //call conversation function
+           //discription
+            cout << "thers a large grave yard in front of me what should i do?" << endl;
+            //dercetions
+            cout << "west) to go west east) to go east south) to go south and north) to go north" << endl;
+            getline(cin, input);
+
+            if (input.compare("west") == 0)
+                room = '3';
+
+            else if (input.compare("east") == 0)
+                room = '4';
+
+            else if (input.compare("south") == 0)
+                room = '5';
+
+            else if (input.compare("north") == 0)
+                cout << "you cant go that way chose another derection." << endl;
+            else
+                cout << "what was that??? ... sorry we dont have one of those here." << endl;
+            break;
+
+        case '3':
+            cout << "room 3" << endl;
+            if (knome == true)
+                wisdome();
+
+            room = crypt();
+
+            //room = '2';
+            //cin>>input;//just to pause the game
+            break;
+
+        case '4':
+            if (knome == true)
+                wisdome();
+            //discription
+            cout << "a large willow tree with a bench stands in front of you it seems old and it leaves are begining to yellow and decay" << endl;
+            //dercetions
+            cout << "west) to go back the way you came east) to go east south) to go south and north) to go north" << endl;
+            getline(cin, input);
+
+            if (input.compare("west") == 0)
+                room = '2';
+
+            else if (input.compare("north") == 0)
+                cout << "you cant go that way chose another derection." << endl;
+
+            else if (input.compare("east") == 0)
+                cout << "you cant go that way chose another derection." << endl;
+
+
+            else if (input.compare("south") == 0)
+                cout << "you cant go that way chose another derection." << endl;
+            else
+                cout << "what was that??? ... sorry we dont have one of those here." << endl;
+            break;
+
+        case '5':
+            //discription
+            cout << "room 5" << endl;
+            if (knome == true)
+                wisdome();
+
+            room = 'n';
+
+            //greenhouse loop, stay in here until you exit
+            while (greenhouse == true && isDead == false) {
+
+                switch (room) {
+
+                case 'n':
+                    cout << "you enter a large greenhouse the glass is covered in a thick layer of dust and mold. dead plants skeletal frame in old pots and beads cracked and broken with decay. The floor looks like it could have once been a beautiful shade of light blue but now looks black and sinister. There are many rows of plants. One looks like it's filled with dead rose bushes. The next looks like old vetibols and gives you the stench of rot. The one next tho the vegibol looks torn up and all of the clay pots are knocked over and scattered across the floor. The final row is blocked by vines and thorns. which row would you like to go down?" << endl;
+                    cout<<"to go to the roses type ‘r’ to go to the vegetables type ‘v’ to go to the broken eiles type ‘d’ to exit the green house type ‘e’"<<endl;
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("v") == 0)
+                        room = 'v';
+                    else if (input.compare("r") == 0)
+                        room = 'r';
+                    else if (input.compare("d") == 0)
+                        room = 'd';
+                    else if (input.compare("e") == 0) {
+                        
+                        greenhouse = false;
+                        room = '2';
+                    }
+
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+                case 'r':
+                    if (knome == true)
+                        wisdome();
+                    cout << "The dead roses line the isles there are seclitol thin stalks woven around rotting oak shelves. The floor is covered in dead clippings and blackened petals that turn to dust as my mud soaked boots pass by. The floor beneath me threatened to fall through and the glass ceiling leaked in several places where the glass had been broken through many years of use. I neered the end of the row of roses. I could see more flower beds beyond which they looked to be slightly broken but maybe there is something of use. I could always go back though i don't think there's much here." << endl;
+                    cout << "type n) to go back and type w) to go to the flower beds" << endl;
+
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("n") == 0)
+                        room = 'n';
+                    else if (input.compare("w") == 0)
+                        room = 'w';
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+                case 'v':
+                    if (knome == true)
+                        wisdome();
+                    cout << "I walked down the row of rotting vegetables. The stench of the routine food made me gag. The floor was squishy under my feet making a squelching noise as I did my best to step around the blackened potatoes and tomatoes that had fallen in my path. As I picked my way around them I started to notice smaller footprints beside my own and pieces of the roten food looked to be cut out and taken away. How strange i thought. As i nered the end of the elise of rotten food i looked out to see a fountain in the middle of the green house where there were huge cracks that appeared to be leaking a unidentified black liquid. I felt uneasy just looking at it. the plants around the crumbling fountain seemed to be decayed to a point of unidentifiable degree. The only way forward looks to be through there. I could always go back though what I should i do." << endl;
+                    cout << "To go to the fountain type ‘f’ to go back type ‘n’" << endl;
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("n") == 0)
+                        room = 'n';
+                    else if (input.compare("f") == 0)
+                        room = 'f';
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+
+                case 'd':
+                    if (knome == true)
+                        wisdome();
+                    cout << "I start walking down the broken elise picking my way through the broken glass and collapsed molding shelves. The rain left puddles on the floor that looked almost black in the dim light. I looked through the shelves hoping to find something interesting but to no avail. The wind howled as the rain poured down harder feeling like bullets. As i scamperd about trying to avoid the rain i saw something new up ahead i ran under a broken shelf witch provided little shelter from the pouring rain. I looked towards the end of the shelfs and could barely make out some sort of structure. It looked like some sort of fountain but something was wrong it looked off. It seemed off but I couldn't put my finger on it. I felt uneasy as a wave of nasioa washed over me. I looked back the way i came and it was instantly gone. I don't want to go toward that thing but there may be something useful." << endl;
+                    cout << "To go to the fountain type ‘f’ to go back type ‘n’" << endl;
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("n") == 0)
+                        room = 'n';
+                    else if (input.compare("f") == 0)
+                        room = 'f';
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+
+                case 'b':
+                    if (knome == true)
+                        wisdome();
+
+                    if (inventory[0] != "knome") {
+                        cout << "You picked up a knome" << endl;
+                        inventory[0] = "knome"; //puts into inventory
+                    }
+                    cout << "The green house seemed like an entirely different place. A small bird house sat on a marble pedestal in the middle of the room. The garden was still alive in here nothing was wilted or leaking black ooze. flowers I could never name shot up from the pots and piles of dirt scattered around the small space. I looked down and was shocked to see the floor was no longer the black swampy tyel it was before. Instead the tile was a beautiful baby bell blue. As I looked around I saw a small tall cap sitting beside a blue cape. They looked like they could have belonged to a doll at one point but there wasn't one in sight. I turned to go back the way I came and to my surprise found a small human-like creature looking back up at me. He had betty black eyes that seemed to pierce my soul and his flesh was chipping away like it was paint. His hair was a stringy blond that looked like it hadn't been washed in a decade. It grinded up at me with a wide toothy smile Showing off blacked broken teeth. Then it started speaking in a recipe broken voice they called me the gnome i will accompany you to your exit whatever that may be. And with that he picked up the pointed red cap and slung the molded blue cape around his shoulders. Where he asked looking back up at me." << endl;
+                    cout << "to exit the green house type ‘n’" << endl;
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("n") == 0)
+                        room = 'n';
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    knome = true;
+                    break;
+
+                case 'w':
+                    if (knome == true)
+                        wisdome();
+                    cout << "I crept down the rows of beds as the rain pounded relentlessly against the glass walls of the house. Sounding like shots going off at a range. As I wandered through the rows I noticed they became more and more disheveled as I went deeper into the greenhouse. The walls seemed to bend as the beds started to end. I could see a decrepit wooden door at the back of the room. I felt uneasy the door seemed to flicker in and out of view even when I was standing still. Closer further never in the same place. What was happening was i losing my mind.i shouldn't go towards it but something draws me should i give in or go back." << endl;
+                    cout << "to go back to the roses type ‘r’ to give in and try to get to the door type ‘g’" << endl;
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("r") == 0)
+                        room = 'r';
+                    else if (input.compare("g") == 0)
+                        room = 'g';
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+
+                case 'f':
+                    if (knome == true)
+                        wisdome();
+                    cout << "A lard marble fountain sat in the middle of the greenhouse. A sickening squelching sound came from the distorited structure as black ooze fell in clumps into the basin below. The longer I watched the black ooze fall the more sick to my stomach I became soon it was overbearing. All my instincts were screaming at me to run and get away from water. I have to go, I have to get out of here but where should I go." << endl;
+                    cout << "to go to the veggies type ‘v’ to go to the broken ilies type ‘d’ to go to the mushrooms type ‘s’ to go to the citrice tree type ‘c’ " << endl;
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("v") == 0)
+                        room = 'v';
+                    else if (input.compare("d") == 0)
+                        room = 'd';
+                    else if (input.compare("s") == 0)
+                        room = 's';
+                    else if (input.compare("m") == 0)
+                        room = 'm';
+                    else if (input.compare("c") == 0)
+                        room = 'c';
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+
+                case 's':
+                    if (knome == true)
+                        wisdome();
+                    cout << "I stumbled into a room full of spores the cloud was so thick I could only see 3 ft in front of me. With every step I took forward the spores filled the air until my eyes started to burn and my throat started to swell. I fell to the ground coughing and gasping but i couldnt breath, there was no air. my lungs were screaming but i couldn't move. Black started to creep in the corners of my eyes. As i was absolutely helpless to do anything but let it happen. Mom dad im so sorry i felt a tear fall down my face and as it hit the ground. The darkness swallowed me whole." << endl;
+
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    isDead = true;//put anywhere you want to kill the player
+                    break;
+
+
+                case 'g':
+                    if (knome == true)
+                        wisdome();
+                    cout << "I flung open the door and entered the shed. Remarkably there was nothing in the shed but a bandage and a flower pot. The bandage laid in the middle of the floor caked in black slime. It seemed to be alive as it moved and crawled over the peace of cloth consuming slowly little by little corroding it peace by peace.the flowerpot sat in the corner it looked remarkably normal almost too much so. I don't think that there's anything here for me to do." << endl;
+                    cout << "to go back type ‘w’ and to investigate type 'p'" << endl;
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("w") == 0)
+                        room = 'w';
+                    else if (input.compare("p") == 0)
+                        room = 'p';
+
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+
+                case 'p':
+                    if (knome == true)
+                        wisdome();
+                    cout << "I picked up the pot and the world began to spin. I tried to let go but i couldn't. I felt a wave of noshia wash over me as i dropped to my knees. What the hell is happening." << endl;
+                    cout << "type 'b' to continue" << endl;
+
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("b") == 0)
+                        room = 'b';
+
+                    cout << "sorry, I don't understand" << endl;
+                    break;
+
+
+                case 'm':
+                    if (knome == true)
+                        wisdome();
+                    cout << "I took a step onto the slimy floors and immediately I felt myself begging to slide. I put the other foot on and immediately started to fall as I hit the ground. I started to slide across the room. I dug in my fingernails to try to get some traction but to no avail. My left hand caught a groove in the floor but my nails couldn't hold on as I pulled my hand back and my nails were ripped and bloody. I continued to slide across the floor trying to keep my hurt hand off the slimy ground i scrambled to the center of the room slipping and sliding across the floor i looked around at my options. sudeley my hand slipped and my head hit the ground with a sickenly loud crunch and the world faded to black." << endl;
+
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("f") == 0)
+                        room = 'f';
+                    else if (input.compare("o") == 0)
+                        room = 'o';
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+
+                case 'c':
+                    if (knome == true)
+                        wisdome();
+                    cout << "A tree towered over me and the air smelled of rotten food mildew. The floor was littered with moled oranges that seemed to move on their own. I nudged one over with my boot and magnets came spilling out covered in a black ooze. My stomach changed as I tried to find something else to look at. I could see a large trunk of the tree peeking out from the next room over. It could be a change of scenery but I could also go back to that dreadful fountain. What should I do?" << endl;
+                    cout << "to go to fountain type ‘f’ to go to the oak tree type ‘o’" << endl;
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("f") == 0)
+                        room = 'f';
+                    else if (input.compare("o") == 0)
+                        room = 'o';
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+
+                case 'o':
+                    if (knome == true)
+                        wisdome();
+                    cout << "I walked into the room that I could see the trunk from and found myself looking at a huge oak tree. The branches swayed violently in the storm outside. I could see the rain pouring down the grooves on the side of the tree. The ground was covered in glass in pudels probably from when the tree initially broke through the roof. Suddenly I heard a huge crack and looked up to see a huge branch falling straight above my head. I couldn't move. I was parilized by fear as I watched the branch get closer and closer until I felt a splitting pain in my skull and could see nothing at all." << endl;
+                    isDead = true;
+
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("c") == 0)
+                        room = 'c';
+
+                    else
+                        cout << "sorry, I don't understand" << endl;
+                    break;
+
+                }//end switch (lettered rooms)
+
+            }//end greenhouse loop
+
+            greenhouse = true;
+            break;
+
+        case '6':
+            if (knome == true)
+                wisdome();
+
+
+
+            if (cut != true) {
+                cout << "I climbed down the ladder rung after rung. Until my hand felt something slimy and sticky. I pulled my hand back in shock and found a black ooze covering my hand. I tried to wipe it off but to no avail. Giving up, I continued climbing into the darkness below. I reached the bottom of the ladder and found myself in a sewer. The walls were coated with the same black ooze that was on the ladder. The air smelled of sewerage and the only light was from flickering bulbs in the ceiling. Suddenly the hair on my arms stood on edge. I could feel something watching me. I slowly turned around and saw eyes staring back at me. Hollow red eyes stared right into mine. Every scene in my body told me to run something was horribly wrong the eyes that were staring back where not of a human or animals. The thing opened its mouth and a long slimy red tongue unfurled. It let out a scream and started out of the shadows directly towards me. Turned and ran as fast as I could. I tried to keep myself from sliping as I sprinted across the wet slimy sewer floor. In the flickering light ahead I could see a form lying in the slime it looked human. The closer i got the more i could make out the figure it was wrapped in bandages and seemed to be crying. I need to keep running away i can't stop and help. I kept running until I reached a ladder at the end of the tunnel and started to climb. I heard the creature screaming behind me. I reached a great at the top and pushed it open sunlight hit my face and i climbed out." << endl;
+                cout << "To continue type e" << endl;
+
+                getline(cin, input);
+           
+
+                if (input.compare("e") == 0) {
+
+
+                    room= '7';
+                    //finish this!
+                }
+
+            }
+            if (cut == true) {
+                cout << "I climbed down the ladder rung after rung. Until my hand felt something slimy and sticky. I pulled my hand back in shock and found a black ooze covering my hand. I tried to wipe it off but to no avail. Giving up i continued climbing into the darkness below. I reached the bottom of the ladder and found myself in a sewer. The walls were coated with the same black ooze that was on the ladder. The air smelled of sewerage and the only light was from flickering bulbs in the ceiling. Suddenly the hair on my arms stood on edge. I could feel something watching me. I slowly turned around and saw eyes staring back at me. Hollow red eyes stared right into mine. Every scene in my body told me to run something was horribly wrong the eyes that were staring back were not of a human or animals. The thing opened its mouth and a long slimy red tongue unfurled. It let out an scream and started out of the shadows directly towards me. Turned and ran as fast as i could. I tried to keep myself from sliping as I sprinted across the wet slimy sewer floor. In the flickering light ahead i could see a form laying in the slime it looked human. The closer i got the more i could make out the figure it was wrapped in bandages and seemed to be crying. I looked over my shoulder and couldn't see the creature. Should i stop and help the bandaged figure or keep running." << endl;
+                cout << "To help type y to continue running type n" << endl;
+                getline(cin, input);
+
+                if (input.compare("y") == 0) {
+                    cout << "I knelt down next to the figer and shook them. A pair of glassy eyes turned to face me his face raped in bandages the black ooze seeping out from under them their clothes were torn and shredded showing off even more oozing bandages. His glassy eyes scanned over me. Your hurt he said pointing to my hand. Give it here. He grabbed my wrist bruising it. Stop, let go. I yelped. But his grip held. He pulled out a bange and wrapped my hand. There he said all better. I looked down at my hand to see a hello kitty bandage put over the cut on my hand. I looked over at him again and could almost make out a smile under the bandages. All of a sudden his milky white eyes widened. Hurry run, he said before it finds you. I looked over my shoulder and saw the hollow red eyes through the darkness. My heart skipped a beat as i jumped to my feet and ran. I kept running until I reached a ladder at the end of the tunnel and started to climb. I heard the creacher screaming behind me. I reached a great at the top and pushed it open sunlight hit my face and i climbed out." << endl;
+                    cout << "To continue type e" << endl;
+                    getline(cin, input);
+                }
+
+                else if (input.compare("n") == 0) {
+                    cout << "No time. I kept running until I reached a ladder at the end of the tunnel and started to climb. I heard the creacher screaming behind me. I reached a great at the top and pushed it open sunlight hit my face and i climbed out." << endl;
+                    cout << "To continue type e" << endl;
+                    getline(cin, input);
+                }
+
+                //go to next room from here i need to figer out how to switch to case 7 from here if input == e
+            }
+
+            break;
+
+        case '7':
+            Church();
+
+            //room = '2';
+            //cin>>input;//just to pause the game
+            break;
+
+        case 8:
+
+            if (knome == true)
+                wisdome();
+            cout << "" << endl;
+
+            //check to see if you have an item
+            if (inventory[3].compare("key") == 0) {
+                //some ending here
+                hasWon = true;
+            }
+            break;
+
+
+        }//main switch (numbered rooms)
+    }//end main game loop
+
+
+    if (hasWon == true && redkey == true) {
+        cout << "you won ending 1 of 10" << endl;
+        cout << "escaped?" << endl;
+    }
+    if (hasWon == true && knome == true) {
+        cout << "you won ending 2 of 10" << endl;
+        cout << "true friends" << endl;
+    }
+    if (hasWon == true && teddy == true) {
+        cout << "you won ending 3 of 10" << endl;
+        cout << "playground crush" << endl;
+    }
+    if (hasWon == true && shovel == true) {
+        cout << "you won? ending 4 of 10" << endl;
+        cout << "the grave diger" << endl;
+    }
+    if (hasWon == true && drawing == true) {
+        cout << "you won ending 5 of 10" << endl;
+        cout << "a new friend" << endl;
+    }
+    if (hasWon == true && drawing == true) {
+        cout << "you won ending 6 of 10" << endl;
+        cout << "true friends" << endl;
+    }
+    if (hasWon == true && knome == true && teddy == true && shovel == false && drawing == true && redpin == true && bandaid == true) {
+        cout << "you won" << endl;
+        cout << "seacret ending" << endl;
+        cout << "ending 7 of 10" << endl;
+        cout << "freedome to the grave yard" << endl;
+    }
+    if (hasWon == true && knome == true && teddy == true && shovel == false && drawing == true && redkey == true && bandaid == true) {
+        cout << "you won" << endl;
+        cout << "seacret ending" << endl;
+        cout << "ending 8 of 10" << endl;
+        cout << "freedome to the grave yard" << endl;
+    }
+    if (hasWon == true && redpin == true) {
+        cout << "you won" << endl;
+        cout << "seacret ending" << endl;
+        cout << "ending 9 of 8" << endl;
+        cout << "true freedome" << endl;
+    }
+
+
+
+    if (isDead == true) {
+        cout << "YOU DIED. game over." << endl;
+        cout << "ending 10 of 10" << endl;
+        cout << "stuck in the grave yard" << endl;
+    }
+
+    //you only see this when game is done
+    cout << endl << endl << "good bye alex" << endl;
+
+}//end main
+
+
+
+//end function
+
+
+
+
+//function definitions
+
+void wisdome() {
+
+
+    int knome = rand() % 10 + 1;
+    switch (knome) {
+      
+    case 1:
+        cout << "the knome says: some one once told me that he was betten brused and left for dead and now he lives in the world inside of his head." << endl;
+        break;
+    case 2:
+        cout << "the knome says: delicit as string strong as steal a spiders string know how to entangel a meal" << endl;
+        break;
+    case 3:
+        cout << "the knome says: the girl told me he sunk a knife inside his chest and watched me draw my final breath." << endl;
+        break;
+    case 4:
+        cout << "the knome says: you'll proboly died alone and old but you never know." << endl;
+        break;
+    case 5:
+        cout << "the knome says: the grave is where you go if the spider tells you so." << endl;
+        break;
+    case 6:
+        cout << "the knome says: they never saw him then and youll never find him now." << endl;
+        break;
+    case 7:
+        cout << "the knome says: i swear the dust wispers around here but i could just be crazy." << endl;
+        break;
+    case 8:
+        cout << "the knome says: theres a blob in the swewer its alive but i cant tell why." << endl;
+        break;
+    case 9:
+        cout << "the knome says: i have been here for years and have never seen a clear sky and i just dont understand why." << endl;
+        break;
+    case 10:
+        cout << "the knome says: evrey one wants to get out of here but no one knows how" << endl;
+
+        break;
+
+
+    }
+}
+
+
+
+//crypt function
+
+//when puting into actull game here down
+char crypt() {
+    string input = "coffin";
+    char room = 'n';
+
+    while (input.compare("e") != 0) {
+
+        switch (room) {
+        case 'n':
+            cout << "I entered a large clearing through the graves 4 large crypts surrounded me each crumbling being eaten by the elements the doors looked like empty black voids sucking me in and in the middle of the 4 was a large statue of an angel however upon closer inspection. The statue was destroyed once butyl fuchers crumbled her kind eyes now looked crazed and insane. Her robes had been worn down so far it gave her an inhuman look. The more I looked the less it looked like an angel. I had a bad feeling about that statue and wanted to stay far away but I felt myself being drawn to it. I started to shiver. I should get out of the rain maybe the crypts could provide some cover from the rain. I could always just get out of here too. What shall i do?" << endl;
+            cout << "To go to the crypts type ether a, b, c, or d, to go to the statue type s." << endl;
+            getline(cin, input);
+            if (input.compare("a") == 0)
+                room = 'a';//crypt 4 nothing
+            else if (input.compare("b") == 0)
+                room = 'b';//crypt b trap door needs key
+            else if (input.compare("c") == 0)
+                room = 'c';//crypt c key
+            else if (input.compare("d") == 0)
+                room = 'd';//crypt d open caseket
+            else if (input.compare("s") == 0)
+                room = 's';//stachue
+            else {
+                cout << "sorry, I don't understand" << endl;
+
+                getline(cin, input);
+                room = 'n';
+            }
+            break;
+
+        case 'a':
+            cout << "I ran into the first crypt the darkness swallowing me like a blanket. With what little light the clouded sky gave me I could just make out one large coffin in the middle of the room and crept closer and saw a small plate with words etched into it. I ran my fingers over it and could make out what it said shara baker 2003 to 2010. The girl must have been my age when she died. Just the tough gave me shivers. What could have happened to her? I wondered aloud. I looked around the crypt again scanning for anything of use but came up empty. There's nothing left for me here i should go back to the rain." << endl;
+            cout << "Type n to continue" << endl;
+
+
+            getline(cin, input);
+            if (input.compare("n") == 0)
+                room = 'n';
+
+            else
+                cout << "sorry, I don't understand" << endl;
+            break;
+
+        case 'b':
+            cout << "i walked up the marble steps to the decrepit crypt. The doorway was grand and looked like something out of a castel. I venched through and found some candles and a math i struck the match and lifted the candle high above my head the room beyond looked as though it could have been used for partys a long red carpet stretched past the candle light and was engulfed by the darkness. I took a step forward leaving the safety of the entrance and venched further into the crypt. I found vases of mold flowers and roten offerings there were photos but none of which i could make out. Suddenly my foot caught on something under the rug. Fell flat on my face unable to catch myself fast enough. I picked myself up and realized that the candle was no longer in my hands i watched in horror as the molded red carpet caught ablaze. The flames spread lapping the walls but unable to get a grasp on the cold hardened marble walls. I could do nothing but stand and watch but as quick as it stated it was gone leaving only the faint light of entrance and the smoldering remains of the once grand carpet. I looked back toward the entrance and found the thing that i had fallen over. A large trap door made of pure white stone laid there a handel was chained to the floor by an old fashioned lock. I reached down and fidelity with it but to no avail. The lock was not rusted nor able to be picked by the means i had on me. I must find a key then ambey there's one in the graveyard. I headed back towards the entrance with an extra spring in my step. A puzzle how existing. I have to find that key." << endl << endl << endl;
+            cout << "Type n to continue" << endl;
+            //need help down here
+
+            if (fire > 0 && key == false) {
+                cout << "I ran back through the crypt. To look at the trap door. This time ignoring its hanting elegance. The smoldering remains gave just enough light to guide me back to the trap door. I had a go at the lock again but was just as unsuccessful as the first time. Defeated I got to my feet and headed back into the rain in search of a key." << endl;
+                cout << "Type n to continue" << endl;
+            }
+
+            if (key == true) {
+                cout << "I ran back through the crypt. To look at the trap door. This time ignoring its hanting elegance the hall. The smoldering remains gave just enough light to guide me back to the trap door. I pulled the key out of my yellow raincoats pocket and fit it into the lock. It fit perfectly. I tugged the trap door open with all my might. The trap door opened and hit the ground with an echoing crash. I purred down the hole and saw ladder rungs leading down into darkness. I could hear water dripping echoing off of walls. An inhuman mone came from the hole ripping my ear drums to shreds. My body was racked with shaking as the morning continued i should run i should get away but what if this is the only way out i have to continue." << endl;//change this
+                cout << "to continue type t" << endl;
+
+            }
+
+
+
+            getline(cin, input);
+            if (input.compare("n") == 0)
+                room = 'n';
+            else if ((input.compare("t") == 0) && key == true) {
+
+
+                return '6';
+
+            }
+            else
+                cout << "sorry, I don't understand" << endl;
+
+            fire++;
+            break;
+            //help zone above   
+
+        case 'c':
+            cout << "I walked into the crypt and squinted my eyes adjusting them to the dim light. When i opened my eyes again fully i saw a glint of metal sitting in the corner of the room. I stepped forward to investigate and started to hear a voice. Worthless a child who can't even read a picture book it said. I stoped i must be hearing things but as i took another few steps another voice chimed in what a dumb kid cant even do basic tasks. I kept walking this time faster picking up the pace as i went more voices chimed in. worthless stupid incompitent unloved broken useless. I could feel tears running down my face i could hear the voices laughing. Look at him he crying. I could barely see through my tears but managed to find the glinting object i gripped onto it and as surely as the voice had started they disappeared and in my hand was a key the silver glinting off the dim light of the crypt i put in in my pocket feeling relieved by the safety it provided. I wiped the tears from my eyes and headed to the door of the crypt wondering where the key went to." << endl;
+            cout << "Type n to continue" << endl;
+            key = true;
+            cout << "you have a key." << endl;
+
+            getline(cin, input);
+            if (input.compare("n") == 0)
+                room = 'n';
+
+            else
+                cout << "sorry, I don't understand" << endl;
+            break;
+
+
+        case 'd':
+            cout << " I entered the decrepit tomb. water dripped trough the cracks of the once immaculate ceiling now broken and molded. I picked my way around the blacked puddles littering the floor. Stepping over bones and turned over cofins. I scanned the small room over once. But there was nothing but bones and broken cofins. Some one must have looted it. I should keep looking for something of value elsewhere." << endl;
+            cout << "Type n to continue" << endl;
+
+
+            getline(cin, input);
+            if (input.compare("n") == 0)
+                room = 'n';
+
+            else
+                cout << "sorry, I don't understand" << endl;
+            break;
+
+            //ned help here to for crying girl
+        case 's':
+            cout << "I aroched the looming stachule its frail inhuman figure looming over me its wings outstretched becoming me forwards. I moved step by step until i was under the stachues wings. I craned my neck up to look at hollow eyes of the statue but they weren't hollow anymore. A set of icy blue eyes stared down at me watching my every move. I screamed and stumbled back sliping in the mud. I watched in horror as the statue came to life a little girl came floating out of the stone she had tears streaming down her face and a teddy bear in one of her translucent hands. Her hair was done up in pigtails the trained down to her once white shirt that was now dyed red with blood. She floated toward me wailing. It's not fair it's not fair she said why does he still get to live well i have died. She continued crying. I had no clue what to do i stood frozen unable to get my thoughts straight. She turned to me her ice blue eyes cutting into my soul. I know she said trough sobs. You can help me. I need you to kill the gravedigger he lives in a house behind the tree on the other side of the grave yard. She handed me a knife. I was shocked this girl wanted me to take another life. Why why would i do that i stammered. Because if you do i'll give you my teddy bear so do we have a deal." << endl;
+            cout << "To say yes type y to say no type x" << endl;
+
+
+            cin >> input;
+            if (input.compare("y") == 0) {
+                cout << "Great then off you go if you succeed then you can have my bear. Good luck." << endl;
+                cout << "To continue type n" << endl;
+            }
+
+            else if (input.compare("x") == 0) {
+                cout << "Fine be that way. She said with a quivering voice. tears welled back up in her eyes. And she turned around and vanished how strange i thought" << endl;
+                cout << "To continue type n" << endl;
+            }
+
+
+            getline(cin, input);
+            if (input.compare("n") == 0)
+                room = 'n';
+
+            else
+                cout << "sorry, I don't understand" << endl;
+            break;
+        }//end switch
+    } //loop    
+    cout << "exiting crypt loop, back to main game." << endl;
+    return 'u'; //nothing changed
+}
+
+
+//church function definition/////////////////////////////////////////////////////////////////////////////
+void Church() {
+    string input = "finaly";
+    while (input.compare("quit") != 0 && isDead == false && hasWon == false) {//main game loop
+
+        
+        for (int i = 0; i < 5; i++)
+        cout << endl << endl;
+
+        switch (room) {
+            //copy paste from here on 
+
+        case '7':
+            
+            if (knome == true)
+                wisdome();
+
+            room = 'n';
+
+            //greenhouse loop, stay in here until you exit
+            while (church == true && isDead == false) {
+
+                switch (room) {
+
+                case 'n':
+                    cout << "The sunlight hit my face as i crawled out of the sewer into a grand church. A huge stained glass window shown into the desolit church. Grime covered the floor and cobwebs hung from the ceiling. I looked around the room and saw to stachues by the pew. Old stone saints but something was wrong. Black ooze spilled from their mouths and eyes spilling across the floor into the drain. I made my way to the stand. A book lay on the stand the page was covered in webbing and red stains. I swiped my hand across the page trying to get off the webbing it didn't do much but i could make out a few words. It was a list written in black ink. The list seemed to be a collection of items. 7 candles, 11 spiders, 1 peace of red chalk and the blood of the unloved. Sounds like a ritual maybe it's how I escape? I looked around and saw a long hall stretching to the east and a room to the north. Mabey the stuff i need is in there." << endl;
+                    cout << "To go to the hallway type ‘h’ to go to the other room type ‘s’." << endl;
+                    //i'd make it really clear to player what to type
+                    getline(cin, input);
+                    if (input.compare("h") == 0)
+                        room = 'h';
+                    else if (input.compare("s") == 0)
+                        room = 's';
+                    break;
+
+                case 's':
+                    cout << "I walked into the north room. The walls were lined in spider webs casting a haunting aura around the room. Old robes lined coat rack after coat rack each covered completely in spider webs. I looked around the spider infected room and found a jar siting empty inside of a web i reached down and picked it up half expecting something to go wrong. All of a sudden i felt spindely legs grabbing my hand pricking my hand with there every step. I looked down and screamed. A black spider clutched onto my arm eight red eyes looked up at me glistening in the dim light. Long fangs extended from its hairy black head abdomen. Eight spindly legs crept along my arm one after another inching closer and closer to my face. I screamed and tried to fling it off but to no avail. It clung on piercing through my rubber rain coat. I crept closer and closer its legs crept up my neck. I grabbed at it and managed to pull it off. It failed trying to escape clashing its fangs together. I trough it to the floor and crushed it under my heel. Once i was satisfied it was dead i perired back into the semily empty jar. However when i looked it was no longer empty 11 spiders clung to a web. Eyes glinting up at me. I jumped and grabbed a lid siting on a nearby tabel trapping them before they could get out. 11 spiders check i said. I should continue searching the other rooms." << endl;
+                    cout << "To leave type ‘n’" << endl;
+
+                    getline(cin, input);
+                    if (input.compare("n") == 0)
+                        room = 'n';
+
+                    spiders = true;
+                    break;
+
+
+
+
+                case 'h':
+                    cout << "I venched down the hallway to the east. the carpet once and intricate design of reds and whites was now filled with holes made by varis insects over the years. I walked along and found 3 open doors the rest where ethir locked or to ruined to be safe. The first room looked to be a nursery of sorts. The second was a choir hall and the 3rd was full of strange looking booths. Witch should i check first." << endl;
+                    cout << "To go to the nursery type ‘k’ to go to the choir hall type ‘c’ to go to the weird booths type ‘b’ to go back to the main room type ‘n’" << endl;
+
+
+                    getline(cin, input);
+                    if (input.compare("b") == 0)
+                        room = 'b';
+                    else if (input.compare("k") == 0)
+                        room = 'k';
+                    else if (input.compare("c") == 0)
+                        room = 'c';
+                    else if (input.compare("n") == 0)
+                        room = 'n';
+                    break;
+
+                case 'b':
+                    cout << "I walked through the rows of booths. Each empty with the curtain drawn off to the side. Curiously I sat down in one i had never sat in one of these before but i had seen it on the tv when my parents watched old movies. I looked around curiously taking it all in. suddenly the curtin shut and i heard a voice on the other side of the booths thin wooden wall. Hello alex my dear what troubles you? The voice sounded caring and reassuring. So i told it that i was scared. The voice answered back saying that there was no need and something about us being in god's land. My head felt fuzzy and the voice told me to sleep and get some rest. I felt my eyes close and when i opened them again there was no light coming through the window. i got up from the wooden chair and noticed something on the floor a wooden cross sat there i picked it up and put it around my neck. I checked the rest of the booths but finding nothing there returned to the hallway." << endl;
+                    cout << "To continue type ‘h’" << endl;
+                    cross = true;
+
+                    getline(cin, input);
+                    if (input.compare("h") == 0)
+                        room = 'h';
+
+                    break;
+
+
+                case 'c':
+                    cout << "I stepped into the choir hall the ceiling spiraling upwards the pews going down until they reached a stage. 20 or 30 chairs surrounded the stage arranged for singers each in harmony. I ventured further looking for one of the items on my list. And then i heard it someone was singing. As i went down to the river to pray. There voice echoed off the walls the haunting melody alone in the silence. They continued singing. Studying about the good old days. This time it was a different voice lower closer. They continued to sing each line was traded off. First the high clear voice and then the low gravely one. Each getting louder and closer. Oh mother let's go down let's go down come on down. Suddenly my hair stood on end and i felt hot breath on my back. Oh alex let's go down let's go down come on down. I screamed. Something grabbed my wrist and started dragging me down the church pews. Their grasp was iron. I kicked and screamed but could do nothing. And the entire time the voices was still singing together now. Oh alex let's go down let's go down come on down. There voices got louder and louder. Until they became defining. I closed my eyes crying. Go away go away i shouted. The voice quit singing and started laughing it was high pitched and crazed. Then suddenly the grip on my hand was released. I looked up and saw nothing there there was no one the room was empty. Except for the lingering echoes of laughter. I felt something under my foot and looked down at it and found a piece of red chalk. How had it gotten there. No matter i grabbed it and ran back to the hallway from where i came." << endl;
+                    cout << "To continue type ‘h’" << endl;
+                    chalk = true;
+
+                    getline(cin, input);
+                    if (input.compare("h") == 0)
+                        room = 'h';
+
+                    break;
+
+
+                case 'k':
+                    cout << "I entered the room that looked like an old daycare. Wooden broken cradles lined a wall with a crucifix above them. The floor was littered in toys and cobwebs lined the shelf with framed children's drawings in them. a chest of drawers sat on the far side of the room. I could see candle holders over there with mabey 7 or 8 candles. I walked over and grabbed them. I need to get out of here i thought i turned around and suddenly the door slammed. A music box opened and a strange song started to play. The melody was familiar but unlike any thing i had ever heard. I walked over to the door and started to yank on the handle but it didn't budge and the music got louder. It started to drown out my thoughts i could barely hear myself think. I grabbed my head covering my ears trying to drain out the song but i couldn't. All i heard was the melody getting louder and louder. My head was pounding i felt something thick and sticky started pouring from my ears. I started to ram myself against the door i have to get out i have to get away. But it was hopeless the door remained locked. I slumped against the door tears running down my face. As everything faded to black. I opened my eyes the music had stopped and the door was open. Without thinking i crawled into the hallway and collapsed on the floor relieved to have escaped." << endl;
+                    cout << "To continue type ‘h’" << endl;
+                    candel = true;
+                    blood = true;
+
+                    getline(cin, input);
+                    if (input.compare("h") == 0)
+                        room = 'h';
+
+                    break;
+
+                    if (spiders == true && chalk == true && candel == true && blood == true && room == 'n') {
+                        cout << "good ish end" << endl;
+                        redkey = true;
+                        hasWon = true;
+
+                    }
+                    if (spiders == true && chalk == true && candel == true && blood == true && cross == true && room == 'n') {
+                        cout << " good end" << endl;
+                        redpin = true;
+                        hasWon = true;
+
+                    }
+                    if (spiders == true && chalk == true && candel == true && blood == true && room != 'n') {
+                        cout << "i think i have all the items. i should head back to the place i found the list." << endl;
+
+                    }
+                    if (spiders == true && chalk == true && candel == true && blood == true && cross == true && room != 'n') {
+                        cout << "i have all the items. i should head back to the place i found the list." << endl;
+
+                    }
+
+
+
+                }
+
+            }
+        }
+    }
+}
